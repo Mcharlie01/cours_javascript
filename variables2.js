@@ -68,13 +68,14 @@ function exo2(n) {
   console.log(tab);
 }
 
-exo2(100);
+/*exo2(100);
 
 function exo2b(n) {
   let tab = []
   for (let i = 1; i <= 100; i++) {
     a=i%3;
-    switch (a)
+    b=i%5;
+    switch (a || b)
     {
       case  0:
         tab.push('fizz');
@@ -87,4 +88,30 @@ function exo2b(n) {
 console.log(tab);
 }
 
-exo2b(100);
+exo2b(100);*/
+
+function listeNombreB(n) {
+  let tab = [];
+  let comparaison = [];
+  for (let i = 1; i <= n; i++) {
+      comparaison.push((i % 3 == 0));
+      comparaison.push((i % 5 == 0));
+      switch (comparaison.toString()) {
+          case [true,false].toString():
+              tab.push('Fizz');
+              break;
+          case [false,true].toString():
+              tab.push('Fuzz');
+              break;
+
+          case [true,true].toString():
+              tab.push('Fiuzz');
+              break;
+          default:
+              tab.push(i);
+      }
+      comparaison = [];
+  }
+  console.log(tab);
+  return tab;
+}
