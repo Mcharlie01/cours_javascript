@@ -2,11 +2,9 @@
 
 
 
-function nombres ()
-{
-   for (let i=0; i<100 ; i++);
-   i+=1;
-   console.log(i);
-}
+let n = 0;
 
-nombres(1)
+for(let i = 0; i <8 ; i++) 
+{
+  n++ ; 
+}
